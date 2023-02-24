@@ -1,0 +1,28 @@
+{
+    "captcha_solver": [
+        {
+            "service": "2captcha",
+            "host": "2captcha.com",
+            "key": ""
+        }
+    ],
+    "listen": ":8080",
+    "worker": {
+        "lbry": [
+            {
+                "concurrent": 0,
+                "proxy": "http://192.168.236.133:8888"
+            },
+            {
+                "concurrent": 4,
+                "proxy": ""
+            }
+        ],
+        "youtube": [
+            {
+                "concurrent": 4,
+                "proxy": ""
+            }
+        ]
+    }
+}
