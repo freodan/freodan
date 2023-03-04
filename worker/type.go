@@ -19,6 +19,10 @@ func (w *Worker) Do(req *http.Request) (resp *WorkerResponse) {
 	w.lock.Lock()
 	defer w.lock.Unlock()
 
+	if req.Header.Get("Accept-Language") == "" {
+		req.Header.Set("Accept-Language", "en-US")
+	}
+
 	var r *http.Response
 	resp = &WorkerResponse{}
 
